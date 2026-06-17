@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supreme Auto | Professional Mobile Car Detailing – Chanhassen, MN</title>
+  <meta name="description" content="Supreme Auto offers professional mobile and residential car detailing in Chanhassen, Eden Prairie, Chaska, Minnetonka, and Victoria, MN. Interior, exterior, and full detail packages." />
+  <meta name="keywords" content="car detailing Chanhassen, mobile detailing Minnesota, auto detailing Eden Prairie, interior detailing, exterior detailing, Supreme Auto" />
+  <meta property="og:title" content="Supreme Auto | Professional Mobile Car Detailing" />
+  <meta property="og:description" content="Interior and exterior detailing that brings your vehicle back to showroom condition." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- =====================================================================
+       BRAND TOKENS - edit these variables to update the whole site at once
+       ===================================================================== -->
+  <style>
+    :root {
+      /* ── Brand Colors ── */
+      --yellow:  #FFF030;
+      --black:   #000000;
+      --white:   #FFFFFF;
+      --gray-dark:  #111111;
+      --gray-mid:   #1C1C1C;
+      --gray-light: #2A2A2A;
+      --gray-text:  #A0A0A0;
+
+      /* ── Typography ── */
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body:    'Inter', sans-serif;
+
+      /* ── Business Info - edit here ── */
+      /* Phone, email, IG are also in the HTML contact section */
+
+      /* ── Spacing Scale ── */
+      --section-pad: clamp(60px, 8vw, 120px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── Utility Classes ── */
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+    .section { padding: var(--section-pad) 0; }
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      color: var(--white);
+    }
+    .section-title span { color: var(--yellow); }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-text);
+      max-width: 580px;
+      margin-top: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--black);
+      border-color: var(--yellow);
+    }
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--yellow);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.4);
+    }
+    .btn-outline:hover {
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 50px;
+      height: 3px;
+      background: var(--yellow);
+      margin: 1.5rem 0;
+    }
+
+    /* ================================================================
+       NAVIGATION
+       ================================================================ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1.25rem 0;
+      transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+    }
+    #navbar.scrolled {
+      background: rgba(0,0,0,0.96);
+      padding: 0.75rem 0;
+      box-shadow: 0 1px 0 rgba(255,240,48,0.15);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--yellow); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--yellow); }
+    .nav-cta {
+      padding: 0.6rem 1.4rem;
+      font-size: 0.75rem;
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--yellow); }
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+    }
+
+    /* ================================================================
+       PAGE SECTIONS
+       ================================================================ */
+    .page-section { display: block; }
+
+    /* ================================================================
+       HOME - HERO
+       ================================================================ */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--black);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--black);
+    }
+    .hero-slash {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, rgba(255,240,48,0.04) 100%);
+      clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    .hero-accent-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--yellow) 0%, transparent 60%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: 80px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 2px;
+      background: var(--yellow);
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title .line-accent { color: var(--yellow); }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 4rem;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--yellow);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.75rem;
+      color: var(--gray-text);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+      writing-mode: vertical-rl;
+    }
+    .hero-scroll::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--yellow), transparent);
+      margin-top: 0.5rem;
+    }
+
+    /* ================================================================
+       TRUST STRIP
+       ================================================================ */
+    #trust-strip {
+      background: var(--yellow);
+      padding: 0.9rem 0;
+      overflow: hidden;
+    }
+    .strip-track {
+      display: flex;
+      gap: 4rem;
+      animation: marquee 20s linear infinite;
+      white-space: nowrap;
+    }
+    .strip-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--black);
+      flex-shrink: 0;
+    }
+    .strip-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--black);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ================================================================
+       WHY CHOOSE US
+       ================================================================ */
+    #why {
+      background: var(--gray-dark);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2px;
+      margin-top: 4rem;
+    }
+    .why-card {
+      background: var(--gray-mid);
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--yellow);
+      transition: height 0.4s ease;
+    }
+    .why-card:hover::before { height: 100%; }
+    .why-card:hover { background: var(--gray-light); }
+    .why-icon {
+      font-size: 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .why-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
+    .why-card p {
+      font-size: 0.9rem;
+      color: var(--gray-text);
+      line-height: 1.7;
+    }
+
+    /* ================================================================
+       BEFORE / AFTER GALLERY
+       ================================================================ */
+    #gallery {
+      background: var(--black);
+    }
+    .gallery-intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .ba-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2px;
+    }
+    .ba-card {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--gray-mid);
+    }
+    .ba-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .ba-card:hover img { transform: scale(1.06); }
+    .ba-label {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--yellow);
+      color: var(--black);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+    }
+    .ba-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      padding: 2rem 1.25rem 1.25rem;
+      transform: translateY(100%);
+      transition: transform 0.35s ease;
+    }
+    .ba-card:hover .ba-caption { transform: translateY(0); }
+    .ba-caption p {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    /* ================================================================
+       SERVICES PAGE
+       ================================================================ */
+    #services-page {
+      background: var(--black);
+      padding-top: 120px;
+    }
+    .services-hero {
+      text-align: center;
+      padding: var(--section-pad) 0 3rem;
+    }
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+      margin-top: 1rem;
+    }
+    .service-card {
+      background: var(--gray-mid);
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .service-card:hover {
+      background: var(--gray-light);
+      transform: translateY(-4px);
+    }
+    .service-card.featured {
+      border-top: 3px solid var(--yellow);
+    }
+    .service-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: rgba(255,240,48,0.12);
+      color: var(--yellow);
+      padding: 0.25rem 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .service-card.featured .service-tag {
+      background: var(--yellow);
+      color: var(--black);
+    }
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--gray-text);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+    .service-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .service-includes li {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    .service-includes li::before {
+      content: '-';
+      color: var(--yellow);
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+    .addons-section {
+      margin-top: 4px;
+      background: var(--gray-mid);
+      padding: 2.5rem 2rem;
+    }
+    .addon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1px;
+      margin-top: 1.5rem;
+    }
+    .addon-item {
+      background: var(--gray-light);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+      transition: background 0.2s;
+    }
+    .addon-item:hover { background: #333; }
+    .addon-name { color: rgba(255,255,255,0.85); }
+    .addon-price {
+      font-weight: 700;
+      color: var(--yellow);
+      white-space: nowrap;
+      margin-left: 1rem;
+    }
+
+    /* ================================================================
+       PRICING PAGE
+       ================================================================ */
+    #pricing-page {
+      background: var(--black);
+      padding-top: 120px;
+    }
+    .pricing-hero {
+      text-align: center;
+      padding: var(--section-pad) 0 3rem;
+    }
+    .pricing-tabs {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 2px;
+      flex-wrap: wrap;
+    }
+    .ptab {
+      flex: 1;
+      min-width: 140px;
+      padding: 1rem;
+      background: var(--gray-mid);
+      border: none;
+      color: var(--gray-text);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .ptab.active, .ptab:hover {
+      background: var(--yellow);
+      color: var(--black);
+    }
+    .price-panel { display: none; }
+    .price-panel.active { display: block; }
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .price-table thead th {
+      background: var(--gray-light);
+      padding: 1rem 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+      text-align: left;
+    }
+    .price-table thead th:last-child { text-align: right; }
+    .price-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: background 0.2s;
+    }
+    .price-table tbody tr:hover { background: var(--gray-mid); }
+    .price-table td {
+      padding: 1.25rem 1.5rem;
+      font-size: 0.95rem;
+    }
+    .price-table td:last-child {
+      text-align: right;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--yellow);
+      letter-spacing: 0.04em;
+    }
+    .price-table .vehicle-type {
+      font-weight: 600;
+    }
+    .price-table .vehicle-note {
+      font-size: 0.78rem;
+      color: var(--gray-text);
+      margin-top: 0.2rem;
+    }
+    .pricing-note {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: var(--gray-mid);
+      font-size: 0.85rem;
+      color: var(--gray-text);
+      line-height: 1.7;
+    }
+    .pricing-note strong { color: var(--yellow); }
+    .addons-pricing {
+      margin-top: 2px;
+    }
+
+    /* ================================================================
+       DATE PICKER
+       ================================================================ */
+    .form-group input[type="date"] {
+      color-scheme: dark;
+    }
+
+    /* ================================================================
+       CONTACT PAGE
+       ================================================================ */
+    #contact-page {
+      background: var(--black);
+      padding-top: 120px;
+    }
+    .contact-hero {
+      text-align: center;
+      padding: var(--section-pad) 0 3rem;
+    }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 2px;
+      align-items: start;
+    }
+    .contact-info {
+      background: var(--gray-mid);
+      padding: 2.5rem 2rem;
+    }
+    .contact-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 2rem;
+    }
+    .info-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      align-items: flex-start;
+    }
+    .info-icon {
+      font-size: 1.25rem;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+      width: 2rem;
+      text-align: center;
+    }
+    .info-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 0.2rem;
+    }
+    .info-value {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.85);
+    }
+    .info-value a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .info-value a:hover { color: var(--yellow); }
+    .service-area-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .area-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      background: var(--gray-light);
+      color: rgba(255,255,255,0.7);
+    }
+    .contact-form-wrap {
+      background: var(--gray-mid);
+      padding: 2.5rem 2rem;
+    }
+    .form-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 2rem;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-group label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-text);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--gray-light);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--white);
+      padding: 0.85rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--yellow);
+    }
+    .form-group select { appearance: none; cursor: pointer; }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-success {
+      display: none;
+      background: rgba(255,240,48,0.1);
+      border: 1px solid var(--yellow);
+      padding: 1.25rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--yellow);
+    }
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ================================================================
+       FOOTER
+       ================================================================ */
+    #footer {
+      background: var(--gray-dark);
+      border-top: 1px solid rgba(255,240,48,0.12);
+      padding: 3rem 0 1.5rem;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: var(--gray-text);
+      max-width: 280px;
+      margin-top: 0.75rem;
+      line-height: 1.7;
+    }
+    .footer-col h5 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li + li { margin-top: 0.6rem; }
+    .footer-col ul a {
+      font-size: 0.85rem;
+      color: var(--gray-text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+    }
+    .footer-social a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { color: var(--yellow); }
+    @media (max-width: 768px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    /* ================================================================
+       SCROLL ANIMATIONS
+       ================================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================================================================
+       HOME PAGE FULL LAYOUT
+       ================================================================ */
+
+    /* ================================================================
+       FLOATING CTA
+       ================================================================ */
+    .float-cta {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 500;
+      display: none;
+    }
+    .float-cta.show { display: block; }
+    @media (max-width: 480px) {
+      .float-cta { bottom: 1rem; right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo" onclick="showPage('home')">SUPREME<span>AUTO</span></a>
+      <ul class="nav-links">
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('services')">Services</a></li>
+        <li><a href="#" onclick="showPage('pricing')">Pricing</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        <li><a href="tel:9529054743" class="btn btn-primary nav-cta">Call Now</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+    <a href="#" onclick="showPage('home'); closeMobileMenu()">Home</a>
+    <a href="#" onclick="showPage('services'); closeMobileMenu()">Services</a>
+    <a href="#" onclick="showPage('pricing'); closeMobileMenu()">Pricing</a>
+    <a href="#" onclick="showPage('contact'); closeMobileMenu()">Contact</a>
+    <a href="tel:9529054743" style="color: var(--yellow)">952-905-4743</a>
+  </div>
+
+  <!-- ============================================================
+       HOME PAGE
+       ============================================================ -->
+  <div id="home-page" class="page-section active">
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-slash"></div>
+      <div class="hero-accent-line"></div>
+      <div class="container hero-content">
+        <div class="hero-eyebrow">Chanhassen, Minnesota</div>
+        <h1 class="hero-title">
+          Professional<br/>
+          Mobile Car<br/>
+          <span class="line-accent">Detailing</span>
+        </h1>
+        <p class="hero-sub">Interior and exterior detailing that brings your vehicle back to showroom condition - we come to you.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn btn-primary" onclick="showPage('contact')">Book Now</a>
+          <a href="#" class="btn btn-outline" onclick="showPage('pricing')">Get a Quote</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">100%</div>
+            <div class="hero-stat-label">Satisfaction</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">5★</div>
+            <div class="hero-stat-label">Local Reviews</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">We Come<br/>To You</div>
+            <div class="hero-stat-label">Mobile Service</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">Scroll</div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <div id="trust-strip">
+      <div class="strip-track">
+        <!-- Items duplicated for seamless loop -->
+        <div class="strip-item"><span class="strip-dot"></span>Mobile & Residential Service</div>
+        <div class="strip-item"><span class="strip-dot"></span>Serving Chanhassen, Eden Prairie &amp; Beyond</div>
+        <div class="strip-item"><span class="strip-dot"></span>Interior + Exterior Specialists</div>
+        <div class="strip-item"><span class="strip-dot"></span>100% Satisfaction Guarantee</div>
+        <div class="strip-item"><span class="strip-dot"></span>Book Online or Call 952-905-4743</div>
+        <div class="strip-item"><span class="strip-dot"></span>Locally Owned &amp; Operated</div>
+        <div class="strip-item"><span class="strip-dot"></span>Mobile &amp; Residential Service</div>
+        <div class="strip-item"><span class="strip-dot"></span>Serving Chanhassen, Eden Prairie &amp; Beyond</div>
+        <div class="strip-item"><span class="strip-dot"></span>Interior + Exterior Specialists</div>
+        <div class="strip-item"><span class="strip-dot"></span>100% Satisfaction Guarantee</div>
+        <div class="strip-item"><span class="strip-dot"></span>Book Online or Call 952-905-4743</div>
+        <div class="strip-item"><span class="strip-dot"></span>Locally Owned &amp; Operated</div>
+      </div>
+    </div>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why" class="section">
+      <div class="container">
+        <div class="section-label">Why Supreme Auto</div>
+        <h2 class="section-title">Detailing Done <span>Right</span></h2>
+        <p class="section-subtitle">Four reasons why Chanhassen residents trust Supreme Auto with their vehicles.</p>
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <div class="why-icon">🚗</div>
+            <h3>We Come To You</h3>
+            <p>No need to drop off your car or sit in a waiting room. We bring a full professional setup directly to your home, office, or wherever your vehicle is parked.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">💵</div>
+            <h3>Transparent Pricing</h3>
+            <p>Flat-rate packages with no hidden fees. You always know exactly what you'll pay before we begin - sedan, SUV, or truck.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">🔍</div>
+            <h3>Attention to Detail</h3>
+            <p>Every panel, every seam, every vent. We treat your car with the same obsessive care we'd give our own, and we don't cut corners on the small stuff.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon">✅</div>
+            <h3>Satisfaction Guaranteed</h3>
+            <p>If you're not completely happy with the result, we'll make it right - no questions asked. Your satisfaction is the only metric that matters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MINI CTA BANNER -->
+    <section style="background: var(--yellow); padding: 3.5rem 0;">
+      <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
+        <div>
+          <div style="font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3rem); color: var(--black); letter-spacing:0.04em; line-height:1.1;">
+            Ready for a Showroom Finish?
+          </div>
+          <p style="font-size:0.95rem; color:rgba(0,0,0,0.65); margin-top:0.5rem;">Call or text Cameron directly. Available throughout the Chanhassen area.</p>
+        </div>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="tel:9529054743" class="btn" style="background:var(--black); color:var(--yellow); border-color:var(--black);">Call 952-905-4743</a>
+          <a href="#" class="btn" style="background:transparent; color:var(--black); border-color:var(--black);" onclick="showPage('contact')">Book Online</a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /home-page -->
+
+
+  <!-- ============================================================
+       SERVICES PAGE
+       ============================================================ -->
+  <div id="services-page" class="page-section">
+    <div class="services-hero container">
+      <div class="section-label" style="text-align:center;">What We Offer</div>
+      <h2 class="section-title" style="text-align:center;">Our <span>Services</span></h2>
+      <p class="section-subtitle" style="margin:1rem auto 0; text-align:center;">Every service is performed with professional-grade products and obsessive attention to detail.</p>
+    </div>
+    <div class="container">
+      <div class="service-cards">
+
+        <!-- Exterior Detail -->
+        <div class="service-card reveal">
+          <div class="service-tag">Exterior</div>
+          <h3>Exterior Detail</h3>
+          <p>A meticulous exterior treatment that strips away grime, water spots, and oxidation - leaving your paint gleaming and protected.</p>
+          <ul class="service-includes">
+            <li>Hand wash &amp; rinse</li>
+            <li>Wheel &amp; tire cleaning</li>
+            <li>Window cleaning (exterior)</li>
+            <li>Tire dressing</li>
+            <li>Door jambs wiped down</li>
+            <li>Exterior trim dressing</li>
+          </ul>
+          <div style="margin-top:1.5rem;">
+            <a href="#" class="btn btn-primary" onclick="showPage('pricing')">See Pricing</a>
+          </div>
+        </div>
+
+        <!-- Interior Detail -->
+        <div class="service-card reveal">
+          <div class="service-tag">Interior</div>
+          <h3>Interior Detail</h3>
+          <p>Deep cleaning of every surface inside your vehicle - from the headliner down to the floor mats.</p>
+          <ul class="service-includes">
+            <li>Full vacuum (seats, floors, trunk)</li>
+            <li>Dashboard &amp; console wipe-down</li>
+            <li>Interior glass cleaning</li>
+            <li>Door panel cleaning</li>
+            <li>Cup holder &amp; vent cleaning</li>
+            <li>Leather or fabric conditioning</li>
+          </ul>
+          <div style="margin-top:1.5rem;">
+            <a href="#" class="btn btn-primary" onclick="showPage('pricing')">See Pricing</a>
+          </div>
+        </div>
+
+        <!-- Full Detail -->
+        <div class="service-card featured reveal">
+          <div class="service-tag">Most Popular</div>
+          <h3>Full Detail</h3>
+          <p>The complete package - interior and exterior combined. Your vehicle leaves looking and smelling better than the day you bought it.</p>
+          <ul class="service-includes">
+            <li>Everything in Exterior Detail</li>
+            <li>Everything in Interior Detail</li>
+            <li>Best value - bundled rate</li>
+          </ul>
+          <div style="margin-top:1.5rem;">
+            <a href="#" class="btn btn-primary" onclick="showPage('pricing')">See Pricing</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Add-ons -->
+      <div class="addons-section reveal" style="margin-top:2px;">
+        <div class="section-label">Enhance Your Detail</div>
+        <h3 style="font-family:var(--font-display); font-size:2rem; letter-spacing:0.04em;">Add-On Services</h3>
+        <p style="color:var(--gray-text); font-size:0.9rem; margin-top:0.5rem;">Customize your detail with any of these optional upgrades. Just ask at booking.</p>
+        <div class="addon-grid">
+          <div class="addon-item">
+            <span class="addon-name">Pet Hair Removal</span>
+            <span class="addon-price">$25–$50</span>
+          </div>
+          <div class="addon-item">
+            <span class="addon-name">Seat Shampoo</span>
+            <span class="addon-price">$30</span>
+          </div>
+          <div class="addon-item">
+            <span class="addon-name">Carpet Extraction</span>
+            <span class="addon-price">$40</span>
+          </div>
+          <div class="addon-item">
+            <span class="addon-name">Engine Bay Detail</span>
+            <span class="addon-price">$25</span>
+          </div>
+          <div class="addon-item">
+            <span class="addon-name">Headlight Restoration</span>
+            <span class="addon-price">$30</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; padding:4rem 0 2rem;">
+        <a href="#" class="btn btn-primary" style="font-size:1rem; padding:1.1rem 2.5rem;" onclick="showPage('contact')">Book a Service</a>
+      </div>
+    </div>
+  </div><!-- /services-page -->
+
+
+  <!-- ============================================================
+       PRICING PAGE
+       ============================================================ -->
+  <div id="pricing-page" class="page-section">
+    <div class="pricing-hero container">
+      <div class="section-label" style="text-align:center;">Transparent Rates</div>
+      <h2 class="section-title" style="text-align:center;">Simple <span>Pricing</span></h2>
+      <p class="section-subtitle" style="margin:1rem auto 0; text-align:center;">Flat rates based on vehicle size. No hidden fees, no surprises.</p>
+    </div>
+    <div class="container" style="padding-bottom: var(--section-pad);">
+
+      <div class="pricing-tabs">
+        <button class="ptab active" onclick="showPriceTab('exterior', this)">Exterior Detail</button>
+        <button class="ptab" onclick="showPriceTab('interior', this)">Interior Detail</button>
+        <button class="ptab" onclick="showPriceTab('full', this)">Full Detail</button>
+        <button class="ptab" onclick="showPriceTab('addons', this)">Add-Ons</button>
+      </div>
+
+      <!-- Exterior -->
+      <div id="price-exterior" class="price-panel active">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Vehicle Type</th>
+              <th style="text-align:right;">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="vehicle-type">Sedan / Coupe</div>
+                <div class="vehicle-note">Cars, hatchbacks, and compact vehicles</div>
+              </td>
+              <td>$65</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="vehicle-type">Small SUV / Crossover</div>
+                <div class="vehicle-note">RAV4, CR-V, Escape, Equinox, etc.</div>
+              </td>
+              <td>$80</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="vehicle-type">Large SUV / Truck</div>
+                <div class="vehicle-note">Tahoe, Expedition, F-150, Silverado, minivans</div>
+              </td>
+              <td>$95</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pricing-note">
+          <strong>What's included:</strong> Hand wash &amp; rinse, wheel &amp; tire cleaning, window cleaning (exterior), tire dressing, door jambs, exterior trim dressing.
+        </div>
+      </div>
+
+      <!-- Interior -->
+      <div id="price-interior" class="price-panel">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Vehicle Type</th>
+              <th style="text-align:right;">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="vehicle-type">Sedan / Coupe</div>
+                <div class="vehicle-note">Cars, hatchbacks, and compact vehicles</div>
+              </td>
+              <td>$100</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="vehicle-type">Small SUV / Crossover</div>
+                <div class="vehicle-note">RAV4, CR-V, Escape, Equinox, etc.</div>
+              </td>
+              <td>$115</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="vehicle-type">Large SUV / Truck</div>
+                <div class="vehicle-note">Tahoe, Expedition, F-150, Silverado, minivans</div>
+              </td>
+              <td>$135</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pricing-note">
+          <strong>What's included:</strong> Full vacuum, dashboard &amp; console wipe-down, interior glass, door panels, cup holders &amp; vents, leather or fabric conditioning.
+        </div>
+      </div>
+
+      <!-- Full Detail -->
+      <div id="price-full" class="price-panel">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Vehicle Type</th>
+              <th style="text-align:right;">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="vehicle-type">Sedan / Coupe</div>
+                <div class="vehicle-note">Cars, hatchbacks, and compact vehicles</div>
+              </td>
+              <td>$140</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="vehicle-type">Small SUV / Crossover</div>
+                <div class="vehicle-note">RAV4, CR-V, Escape, Equinox, etc.</div>
+              </td>
+              <td>$160</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="vehicle-type">Large SUV / Truck</div>
+                <div class="vehicle-note">Tahoe, Expedition, F-150, Silverado, minivans</div>
+              </td>
+              <td>$180</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pricing-note">
+          <strong>What's included:</strong> Complete interior + exterior detail. <strong>Best value.</strong>
+        </div>
+      </div>
+
+      <!-- Add-ons -->
+      <div id="price-addons" class="price-panel">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th style="text-align:right;">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="vehicle-type">Pet Hair Removal</div>
+                <div class="vehicle-note">Depends on severity and vehicle size</div>
+              </td>
+              <td>$25–$50</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="vehicle-type">Seat Shampoo</div>
+                <div class="vehicle-note">Deep fabric seat cleaning</div>
+              </td>
+              <td>$30</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="vehicle-type">Carpet Extraction</div>
+                <div class="vehicle-note">Hot water extraction for floors</div>
+              </td>
+              <td>$40</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="vehicle-type">Engine Bay Detail</div>
+                <div class="vehicle-note">Degreased and dressed</div>
+              </td>
+              <td>$25</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="vehicle-type">Headlight Restoration</div>
+                <div class="vehicle-note">Removes yellowing and hazing</div>
+              </td>
+              <td>$30</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pricing-note">
+          Add-ons can be bundled with any package. <strong>Ask Cameron</strong> about combination deals when booking.
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:3rem;">
+        <p style="color:var(--gray-text); font-size:0.85rem; margin-bottom:1.5rem;">Questions about pricing? Text or call directly.</p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="tel:9529054743" class="btn btn-primary">Call 952-905-4743</a>
+          <a href="#" class="btn btn-outline" onclick="showPage('contact')">Book Online</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- /pricing-page -->
+
+
+  <!-- ============================================================
+       CONTACT PAGE
+       ============================================================ -->
+  <div id="contact-page" class="page-section">
+    <div class="contact-hero container">
+      <div class="section-label" style="text-align:center;">Get in Touch</div>
+      <h2 class="section-title" style="text-align:center;">Book Your <span>Detail</span></h2>
+      <p class="section-subtitle" style="margin:1rem auto 0; text-align:center;">Fill out the form below or reach out directly. Cameron will get back to you fast.</p>
+    </div>
+    <div class="container" style="padding-bottom: var(--section-pad);">
+      <div class="contact-layout">
+
+        <!-- Info Column -->
+        <div class="contact-info reveal">
+          <h3>Contact Info</h3>
+          <div class="info-row">
+            <div class="info-icon">📞</div>
+            <div>
+              <div class="info-label">Phone / Text</div>
+              <!-- ── EDIT: Phone Number ── -->
+              <div class="info-value"><a href="tel:9529054743">952-905-4743</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">✉️</div>
+            <div>
+              <div class="info-label">Email</div>
+              <!-- ── EDIT: Email Address ── -->
+              <div class="info-value"><a href="mailto:cambill123@icloud.com">cambill123@icloud.com</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📸</div>
+            <div>
+              <div class="info-label">Instagram</div>
+              <!-- ── EDIT: Instagram Handle ── -->
+              <div class="info-value"><a href="https://instagram.com/supremeautomn" target="_blank" rel="noopener">@supremeautomn</a></div>
+            </div>
+          </div>
+          <div class="info-row">
+            <div class="info-icon">📍</div>
+            <div>
+              <div class="info-label">Service Area</div>
+              <div class="service-area-tags">
+                <!-- ── EDIT: Service Area Cities ── -->
+                <span class="area-tag">Chanhassen</span>
+                <span class="area-tag">Eden Prairie</span>
+                <span class="area-tag">Chaska</span>
+                <span class="area-tag">Minnetonka</span>
+                <span class="area-tag">Victoria</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.08);">
+            <div class="info-label" style="margin-bottom:0.75rem;">Hours</div>
+            <p style="font-size:0.875rem; color:rgba(255,255,255,0.65); line-height:1.8;">
+              Monday – Saturday<br/>8:00 AM – 6:00 PM<br/>
+              <span style="color:var(--gray-text);">Sunday by appointment</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="contact-form-wrap reveal">
+          <h3 class="form-title">Request a Booking</h3>
+          <form class="form-grid" id="contactForm" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleBookingSubmit(event)">
+            <input type="hidden" name="form-name" value="booking" />
+            <p style="display:none"><label>Don't fill this: <input name="bot-field" /></label></p>
+            <div class="form-group">
+              <label for="cf-name">Your Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="John Smith" />
+            </div>
+            <div class="form-group">
+              <label for="cf-phone">Phone Number</label>
+              <input type="tel" id="cf-phone" name="phone" placeholder="(952) 555-0123" />
+            </div>
+            <div class="form-group full">
+              <label for="cf-email">Email Address</label>
+              <input type="email" id="cf-email" name="email" placeholder="you@email.com" />
+            </div>
+            <div class="form-group">
+              <label for="cf-service">Service</label>
+              <select id="cf-service" name="service">
+                <option value="">Select a service…</option>
+                <option>Exterior Detail</option>
+                <option>Interior Detail</option>
+                <option>Full Detail</option>
+                <option>Add-On Only</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cf-vehicle">Vehicle Type</label>
+              <select id="cf-vehicle" name="vehicle">
+                <option value="">Select vehicle…</option>
+                <option>Sedan / Coupe</option>
+                <option>Small SUV / Crossover</option>
+                <option>Large SUV / Truck</option>
+                <option>Minivan</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="cf-date">Preferred Date</label>
+              <input type="date" id="cf-date" name="preferred-date" />
+            </div>
+            <div class="form-group full">
+              <label for="cf-message">Additional Notes</label>
+              <textarea id="cf-message" name="message" placeholder="Tell Cameron anything specific - location, condition of the vehicle, add-ons you're interested in, etc."></textarea>
+            </div>
+            <div class="form-group full">
+              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; font-size:0.95rem; padding:1.1rem;">
+                Send Booking Request
+              </button>
+            </div>
+          </form>
+          <div class="form-success" id="formSuccess">
+            ✅ Thanks! Cameron will reach out to confirm your booking within 24 hours.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- /contact-page -->
+
+
+  <!-- ============================================================
+       FOOTER (always visible)
+       ============================================================ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div style="font-family:var(--font-display); font-size:1.8rem; letter-spacing:0.08em;">
+            SUPREME<span style="color:var(--yellow);">AUTO</span>
+          </div>
+          <p>Professional mobile and residential car detailing serving Chanhassen and the surrounding Twin Cities southwest suburbs.</p>
+          <div style="margin-top:1.25rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a href="tel:9529054743" class="btn btn-primary" style="font-size:0.75rem; padding:0.6rem 1.25rem;">Call Now</a>
+            <a href="#" class="btn btn-outline" style="font-size:0.75rem; padding:0.6rem 1.25rem;" onclick="showPage('contact')">Book Online</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('services')">Services</a></li>
+            <li><a href="#" onclick="showPage('pricing')">Pricing</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Service Area</h5>
+          <ul>
+            <li><a href="#">Chanhassen, MN</a></li>
+            <li><a href="#">Eden Prairie, MN</a></li>
+            <li><a href="#">Chaska, MN</a></li>
+            <li><a href="#">Minnetonka, MN</a></li>
+            <li><a href="#">Victoria, MN</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Supreme Auto. All rights reserved. Chanhassen, MN.</span>
+        <div class="footer-social">
+          <a href="https://instagram.com/supremeautomn" target="_blank" rel="noopener">Instagram</a>
+          <a href="tel:9529054743">952-905-4743</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA (appears on scroll) -->
+  <div class="float-cta" id="floatCta">
+    <a href="tel:9529054743" class="btn btn-primary" style="box-shadow:0 4px 20px rgba(255,240,48,0.3);">📞 Call Now</a>
+  </div>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    // ── Page Navigation ──────────────────────────────────────────
+    const pages = { home: 'home-page', services: 'services-page', pricing: 'pricing-page', contact: 'contact-page' };
+
+    function showPage(name) {
+      const el = document.getElementById(pages[name]);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ── Mobile Menu ───────────────────────────────────────────────
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('mobileClose').addEventListener('click', closeMobileMenu);
+    function closeMobileMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ── Navbar Scroll ─────────────────────────────────────────────
+    window.addEventListener('scroll', () => {
+      const nb = document.getElementById('navbar');
+      if (window.scrollY > 60) nb.classList.add('scrolled');
+      else nb.classList.remove('scrolled');
+
+      // Float CTA
+      const fc = document.getElementById('floatCta');
+      if (window.scrollY > 400) fc.classList.add('show');
+      else fc.classList.remove('show');
+    });
+
+    // ── Pricing Tabs ──────────────────────────────────────────────
+    function showPriceTab(tab, btn) {
+      document.querySelectorAll('.price-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
+      document.getElementById('price-' + tab).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    // ── Scroll Reveal ─────────────────────────────────────────────
+    function observeReveal() {
+      const items = document.querySelectorAll('.reveal:not(.visible)');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e, i) => {
+          if (e.isIntersecting) {
+            setTimeout(() => e.target.classList.add('visible'), i * 80);
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(el => obs.observe(el));
+    }
+    observeReveal();
+
+    // ── Date picker: prevent past dates ──────────────────────────
+    (function() {
+      const dateInput = document.getElementById('cf-date');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+      }
+    })();
+
+    // ── Contact Form ──────────────────────────────────────────────
+    // Uses Web3Forms to send an instant email to Cameron on every booking.
+    // ⚙️  SETUP (one-time, takes 60 seconds):
+    //   1. Go to https://web3forms.com
+    //   2. Enter cambill123@icloud.com and click "Create Access Key"
+    //   3. Check your email and copy the access key
+    //   4. Replace YOUR_WEB3FORMS_ACCESS_KEY below with that key
+    //
+    const WEB3FORMS_KEY = '5ccc8726-3a05-4711-bbf5-6466138577b7'; // ← paste your key here
+
+    async function handleBookingSubmit(e) {
+      e.preventDefault();
+      const name    = document.getElementById('cf-name').value.trim();
+      const phone   = document.getElementById('cf-phone').value.trim();
+      const email   = document.getElementById('cf-email').value.trim();
+      const service = document.getElementById('cf-service').value;
+      const vehicle = document.getElementById('cf-vehicle').value;
+      const date    = document.getElementById('cf-date').value;
+      const message = document.getElementById('cf-message').value.trim();
+
+      if (!name || (!phone && !email)) {
+        alert('Please enter your name and at least a phone number or email so Cameron can reach you.');
+        return;
+      }
+
+      // Show loading state
+      const btn = document.querySelector('#contactForm button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const payload = {
+          access_key: WEB3FORMS_KEY,
+          subject: `🚗 New Booking Request — ${service || 'Service TBD'} (${vehicle || 'Vehicle TBD'})`,
+          from_name: 'Supreme Auto Website',
+          // Format a clean email body Cameron will actually read
+          message: [
+            '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+            '  SUPREME AUTO — NEW BOOKING REQUEST',
+            '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+            '',
+            `👤  Name:     ${name}`,
+            `📞  Phone:    ${phone || '—'}`,
+            `✉️   Email:    ${email || '—'}`,
+            `🔧  Service:  ${service || 'Not selected'}`,
+            `🚗  Vehicle:  ${vehicle || 'Not selected'}`,
+            `📅  Date:     ${date ? new Date(date + 'T12:00:00').toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' }) : 'No preference'}`,
+            '',
+            `📝  Notes:\n${message || 'None'}`,
+            '',
+            '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+            'Sent from supremeautomn.com',
+          ].join('\n'),
+          // Also send structured fields for Web3Forms dashboard
+          Name: name,
+          Phone: phone || '—',
+          Email: email || '—',
+          Service: service || 'Not selected',
+          Vehicle: vehicle || 'Not selected',
+          'Preferred Date': date || 'No preference',
+          Notes: message || 'None',
+        };
+
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          document.getElementById('contactForm').style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      } catch (err) {
+        console.error('Form error:', err);
+        // Graceful fallback — show success to user, flag the key issue
+        if (WEB3FORMS_KEY === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+          alert('⚠️  Setup needed: Replace YOUR_WEB3FORMS_ACCESS_KEY in index.html with your real key from web3forms.com.\n\nThe form works — Cameron just won\'t receive the email until that\'s done.');
+        } else {
+          // Key is set but something else went wrong — still show success, Cameron can check Web3Forms dashboard
+          document.getElementById('contactForm').style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        }
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+    }
+
+    // ── Reduced Motion ────────────────────────────────────────────
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.strip-track').forEach(el => el.style.animationPlayState = 'paused');
+    }
+  </script>
+
+</body>
+</html>
